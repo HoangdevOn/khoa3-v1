@@ -1,11 +1,14 @@
-import React from 'react'
-import './Header.css';
+import React from "react";
+import "./header.css";
 
 function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="https://photo2.tinhte.vn/data/avatars/l/2995/2995271.jpg?1700038051" alt="Logo" />
+        <img
+          src="https://photo2.tinhte.vn/data/avatars/l/2995/2995271.jpg?1700038051"
+          alt="Logo"
+        />
       </div>
       <nav className="navigation">
         {/* Thay đường dẫn lại */}
