@@ -1,4 +1,5 @@
 import React from "react";
+import "./register.css";
 
 const InputField = ({ label, type, name, value, onChange }) => {
   return (
@@ -42,7 +43,7 @@ const SubmitButton = ({ onClick }) => {
   );
 };
 
-const Register = () => {
+function Register() {
   const [formState, setFormState] = React.useState({
     username: "",
     email: "",
@@ -103,6 +104,6 @@ const Register = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Register;
