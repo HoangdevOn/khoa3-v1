@@ -10,6 +10,20 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.btn.btn-primary {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #2152bb;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+  background-color: #3c6fb3;
+}
+
 .register h2 {
   font-size: 2rem;
   font-weight: bold;

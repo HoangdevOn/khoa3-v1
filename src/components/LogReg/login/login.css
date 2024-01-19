@@ -96,6 +96,10 @@
   background-color: #1a1a1a;
 }
 
+.signup-link {
+  text-align: center;
+}
+
 .register-link {
   margin-top: 1rem;
   text-align: center;

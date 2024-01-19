@@ -1,7 +1,7 @@
 import React from "react";
 import "./register.css";
 
-const InputField = ({ label, type, name, value, onChange }) => {
+const InputField = ({ label, type, name, value, onChange, error }) => {
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
@@ -13,6 +13,7 @@ const InputField = ({ label, type, name, value, onChange }) => {
         value={value}
         onChange={onChange}
       />
+      {error && <span className="error">{error}</span>}
     </div>
   );
 };
@@ -46,8 +47,10 @@ const SubmitButton = ({ onClick }) => {
 function Register() {
   const [formState, setFormState] = React.useState({
     username: "",
+    age: "",
     email: "",
     password: "",
+    confirmPassword: "",
     agreeToTerms: false,
   });
 
@@ -63,7 +66,6 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission here
   };
 
   return (
@@ -81,6 +83,13 @@ function Register() {
           onChange={handleInputChange}
         />
         <InputField
+          label="Ngày sinh"
+          type="date"
+          name="age"
+          value={formState.age}
+          onChange={handleInputChange}
+        />
+        <InputField
           label="Email"
           type="email"
           name="email"
@@ -93,6 +102,18 @@ function Register() {
           name="password"
           value={formState.password}
           onChange={handleInputChange}
+        />
+        <InputField
+          label="Xác nhận lại mật khẩu"
+          type="password"
+          name="confirmPassword"
+          value={formState.confirmPassword}
+          onChange={handleInputChange}
+          error={
+            formState.password !== formState.confirmPassword
+              ? "Mật khẩu không khớp"
+              : ""
+          }
         />
         <Checkbox
           label="Tôi đồng ý với các điều khoản và điều kiện"
